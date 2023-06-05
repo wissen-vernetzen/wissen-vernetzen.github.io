@@ -115,9 +115,16 @@
           <div class="card basic">
             <div class="card-body">
               <h5 class="card-title">Basic Questions</h5>
-
               <div>
-                <h6 style="color: #f49c45">1. Who Are You and Why Did You Build This Website?</h6>
+                <h6 style="color: #f49c45">1. Why Is the Title in German but the Website in English?</h6>
+                <p class="card-text">The website actually has two titles:
+                  <img src="assets/img/wvn-2.png" alt="wissen vernetzen logo"/> The second part in English is the subtitle. I used the German title from a <a style="color: #f48c24" href="https://zenodo.org/record/7804671">poster</a> I created about my Master's thesis for a conference. Since the title
+                grew on me, I also thought it fitting for this website, as it portrays perfectly my key focus. The full title of the poster is
+                <em>Wissen vernetzen ist wie Sterne beobachten</em>, which translates to <em>Connecting knowledge is like stargazing</em>. Also, it is planned
+                to offer a German and French version of this website in the future.</p>
+              </div>
+              <div class="pt-2">
+                <h6 style="color: #f49c45">2. Who Are You and Why Did You Build This Website?</h6>
                 <p class="card-text">My name is Sarah, a Digital Humanities student currently enrolled at Trier University.
                   While I have been working on this correspondence in context of my Master's thesis, I felt the need to display the things I developed and make them reusable for
                 other people. Since one of the main goals of my thesis is to transform any information given about the correspondence into a linked open data approach that relies on principles of
@@ -132,19 +139,41 @@
               </div>
 
               <div class="pt-2">
-                <h6 style="color: #f49c45">2. Who Is Constance de Salm and What Is Her Correspondence?</h6>
-                <p>Constance de Salm was a writer who lived in 18th and 19th century France (Paris, later on in Castle Dyck, near Aachen).
-                  Throughout her lifetime, she conducted a (long-distance) espitolary salon with numerous friends, renowned writers, scholars and artists of her time, with which she correspondend constinuously and frequently.
+                <h6 style="color: #f49c45">3. Who Is Constance de Salm and What Is Her Correspondence?</h6>
+                <p>Constance de Salm (1767-1845) was a prominent French writer and intellectual of the 19th century.
+                  Known for her literary talent and active participation in literary salons, she forged connections with influential
+                  figures and conducted a (long-distance) espitolary salon with numerous friends, renowned writers, scholars and artists of her time, with which she correspondend constinuously and frequently.
+                  Her diverse body of work encompassed plays, novels, poetry, and essays, exploring themes of love, passion, and the societal roles of women. Constance de Salm's
+                  advocacy for women's rights and her progressive ideas continue to inspire and shape the intellectual discourse of her time and beyond.
                   The letters she (and others) wrote are partly cummulated in an edition Constance de Salm herself wanted to publish; also, other documents and further, non-edited letters are part of a collection currently with provenance at the
                    German Historical Institute (DHI) in Paris. The provided metadata on this website concerns around 2,300 letters from only Constance de Salm to other people.
                   All letters are indexed with metadata and can be viewed online as digital copies, now also via the knowledge graph presented on this website.</p>
               </div>
 
               <div class="pt-2">
-                <h6 style="color: #f49c45">3. What is a knowledge graph?</h6>
+                <h6 style="color: #f49c45">4. What Is a Knowledge Graph and Why Do You Use It?</h6>
                 <p>Knowledge graphs represent knowledge, capturing information about entities,
                   their attributes, and the relationships between them. With knowledge graphs, it is possible to organise,
-                  analyse and retrieve big amounts of interconnected data on the web, which immensly facilitates advanced insights into these sets of data.</p>
+                  analyse and retrieve big amounts of interconnected data on the web, which immensly facilitates advanced insights into these sets of data.
+                  Storing metadata in RDF for research data management (RDM) is useful since RDF provides a flexible and extensible data model representing complex relationships and attributes.
+                  Researchers can capture rich and structured metadata about datasets. The semantic structuring provided by RDF
+                  and the use of ontologies plus controlled vocabularies helps formulating standardized descriptions. That way,
+                  data discoverability and interoperability is enhanced. It goes without saying that RDF's compatibility
+                  with linked data and FAIR principles enables (oftenly) seemless integration of metadata across different research domains,
+                  facilitating interdisciplinary exploration, usage and collaboration of data.</p>
+              </div>
+
+              <div class="pt-2">
+                <h6 style="color: #f49c45">5. What Software Did You Use?</h6>
+                <p class="card-text">
+                 To bring this project to life, I used Protégé to define the ontology, providing a first structured framework for the graph database.
+                  Then, using Python in combination with the owlready2 package, I populated the knowledge graph with relevant data from an Excel file.
+                  To ensure efficient data visualisation and management, I integrated it in Neo4J, which meant the RDF graph needed to be transformed into a Labeled Property Graph.
+                  Neo4J offered powerful features for handling and visualizing the graph database.
+                  Finally, I leveraged JavaScript and D3.js to create an interactive visualisation within the web browser. For doing so, I had a local server API request
+                  to the Neo4J data base provide the required data format (a JSON file with information about nodes and edges).
+                  allowing users to explore and engage with the knowledge graph.
+                </p>
               </div>
 
             </div>
@@ -173,7 +202,7 @@
                                 src="/assets/img/fontawesome/envelope-regular.svg"
                                 alt="un triangle aux trois côtés égaux"
                                 height="50px"
-                                width="50px" /> Letter</li>
+                                width="50px" /> <a href="ontology.html#Letter" style="color: #f48c24">Letter</a></li>
                       </ul>
                     </div>
                   </div>
@@ -192,12 +221,12 @@
                                 src="assets/img/cds_icon_circle.png"
                                 alt="un triangle aux trois côtés égaux"
                                 height="50px"
-                                width="50px" /> Sender (Constance de Salm)</li>
+                                width="50px" /> <a href="ontology.html#Sender" style="color: #f48c24">Sender (Constance de Salm)</a></li>
                         <li class="list-group-item"><img
                                 src="assets/img/fontawesome/person-solid.svg"
                                 alt="un triangle aux trois côtés égaux"
                                 height="50px"
-                                width="50px" /> Addressee</li>
+                                width="50px" /> <a href="ontology.html#Addressee" style="color: #f48c24">Addressee</a></li>
                       </ul>
                     </div>
                   </div>
@@ -216,13 +245,13 @@
                                 src="/assets/img/fontawesome/tag-solid.svg"
                                 alt="un triangle aux trois côtés égaux"
                                 height="50px"
-                                width="50px" /> Keyword
+                                width="50px" /> <a href="ontology.html#Keyword" style="color: #f48c24">Keyword</a>
                         </li>
                         <li class="list-group-item"><img
                                 src="/assets/img/fontawesome/i-cursor-solid.svg"
                                 alt="un triangle aux trois côtés égaux"
                                 height="50px"
-                                width="50px" /> Automatic Keyword
+                                width="50px" /> <a href="ontology.html#Automatic_Keyword" style="color: #f48c24">Automatic Keyword</a>
                         </li>
                       </ul>
                     </div>
@@ -242,7 +271,7 @@
                                 src="/assets/img/fontawesome/quote-left-solid.svg"
                                 alt="un triangle aux trois côtés égaux"
                                 height="50px"
-                                width="50px" /> First Line
+                                width="50px" /> <a href="ontology.html#First_Line" style="color: #f48c24">First Line</a>
                         </li>
                       </ul>
                     </div>
@@ -262,7 +291,7 @@
                                 src="/assets/img/fontawesome/heart-solid.svg"
                                 alt="un triangle aux trois côtés égaux"
                                 height="50px"
-                                width="50px" /> Sentiment
+                                width="50px" /> <a href="ontology.html#Sentiment" style="color: #f48c24">Sentiment</a>
                         </li>
                       </ul>
                     </div>
@@ -282,7 +311,7 @@
                                 src="/assets/img/fontawesome/map-pin-solid.svg"
                                 alt="un triangle aux trois côtés égaux"
                                 height="50px"
-                                width="50px" /> Place of Exposition
+                                width="50px" /> <a href="ontology.html#Place_of_Exposition" style="color: #f48c24">Place of Exposition</a>
                         </li>
                       </ul>
                     </div>

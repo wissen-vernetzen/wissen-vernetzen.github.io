@@ -104,7 +104,7 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Wissen vernetzen ist wie Sterne beobachten</h1>
+      <h1>Ontology</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -119,45 +119,97 @@
 
           <div class="card basic">
             <div class="card-body">
-              <h5 class="card-title">Ontology vocabulary and definitions</h5>
+              <h5 class="card-title">Ontology Vocabulary and Definitions</h5>
 
-              <div id="Letter">
+              <div id="Letter" class="pt-2">
                 <h6 style="color: #f49c45">Letter</h6>
-                <p></p>
+                <p>
+                  A <em>letter</em> represents a written communication between two individuals,
+                  in this correspondence through a physical medium which is available as facsimile on the project homepage.
+                  It encapsulates properties such as sender, addressee or dates, as well as other metadata about
+                  its place of exposition, format, and any associated annotations (sentiments, keywords, etc.).</p>
+                <h6 style="color: #f49c45"><small>Example:</small></h6>
+                <div>
+                  <a href="https://constance-de-salm.de/archiv/#/document/11254" class="badge rounded-pill bg-secondary" style="color:#ffff">"11254"</a>
+                </div>
               </div>
 
               <div id="Sender" class="pt-2">
                 <h6 style="color: #f49c45">Sender</h6>
-                <p></p>
+                <p>The <em>sender</em> (in this case always Constance de Salm) represents the individual
+                  who initiates the communication via letter. It captures information about the person given by
+                  other data repositories, such as Wikidata or VIAF.</p>
               </div>
 
               <div id="Addressee" class="pt-2">
                 <h6 style="color: #f49c45">Addressee</h6>
-                <p></p>
-              </div>
-              <div id="Keyword">
-                <h6 style="color: #f49c45">Keyword</h6>
-                <p></p>
-              </div>
-
-              <div id="Automatic_Keyword">
-                <h6 style="color: #f49c45">Automatic Keyword</h6>
-                <p></p>
-              </div>
-
-              <div id="Sentiment">
-                <h6 style="color: #f49c45">Sentiment</h6>
-                <p></p>
-              </div>
-
-              <div id="First_Line">
-                <h6 style="color: #f49c45">First Line</h6>
-                <div id="fl_11254">
-                  "Voici, Monsieur, le copie de votre excellent article."
+                <p>
+                  The <em>addressee</em> represents the intended recipient of a letter.
+                  It captures information about the person given by
+                  other data repositories, such as Wikidata or VIAF.
+                </p>
+                <h6 style="color: #f49c45"><small>Example:</small></h6>
+                <div>
+                  <a href="https://d-nb.info/gnd/116643919" class="badge rounded-pill bg-secondary" style="color:#ffff">"Jean Charles François Ladoucette@en"</a>
                 </div>
-                <p></p>
               </div>
 
+
+              <div id="Keyword" class="pt-2">
+                <h6 style="color: #f49c45">Keyword</h6>
+                <p>The entity <em>keyword</em> represents a descriptive term or phrase that is associated with a particular resource or concept.
+                  It provides a means to classify and organize information about the letters. The keywords were manually annotated in earlier project stages.</p>
+                <h6 style="color: #f49c45"><small>Example:</small></h6>
+                <div>
+                  <a href="https://www.wikidata.org/wiki/Q12147" class="badge rounded-pill bg-secondary" style="color:#ffff">"santé@fr","health@en","Gesundheit@de"</a>
+                </div>
+              </div>
+
+              <div id="Automatic_Keyword" class="pt-2">
+                <h6 style="color: #f49c45">Automatic Keyword</h6>
+                <p>The entity <em>automatic keyword</em> represents a keyword or term that is generated automatically,
+                  typically through computational methods like text mining, intending to describe and categorise the text in the letters.
+                  It denotes a keyword that is not manually assigned by a human but is generated based on the content, context, or other relevant factors associated with the letter!</p>
+              <h6 style="color: #f49c45"><small>Example:</small></h6>
+              <div id="excellentarticle">
+                <span class="badge rounded-pill bg-secondary">"excellent article"</span>
+                </div>
+              </div>
+
+
+              <div id="Sentiment" class="pt-2">
+                <h6 style="color: #f49c45">Sentiment</h6>
+                <p>
+                  The <em>sentiment</em> represents the emotional orientation expressed in a text or statement, capturing the
+                  overall tone, opinion, or attitude conveyed; those carry connotations such as positive, negative, or neutral.
+                </p>
+                <h6 style="color: #f49c45"><small>Example:</small></h6>
+                <div id="positive">
+                  <span class="badge rounded-pill bg-secondary">"positive"</span>
+                </div>
+              </div>
+
+              <div id="First_Line" class="pt-2">
+                <h6 style="color: #f49c45">First Line</h6>
+                <p>The <em>first line</em> represents the initial sentence of a letter. It is the beginning of the textual content
+                  and was manually transcribed in an earlier project stage.
+                </p>
+                <h6 style="color: #f49c45"><small>Example:</small></h6>
+                <div id="fl_11254">
+                  <a href="https://constance-de-salm.de/archiv/#/document/11254:~:text=Voici%2C%20Monsieur%2C%20le%20copie%20de%20votre%20excellent%20article." style="color:#ffff" class="badge rounded-pill bg-secondary">"Voici, Monsieur, le copie de votre excellent article."</a>
+                </div>
+              </div>
+
+              <div id="Place_of_Exposition" class="pt-2">
+                <h6 style="color: #f49c45">Place of Exposition</h6>
+                <p>The <em>place of exposition</em> represents a location where a letter was displayed.
+                  It captures the contextual framework for the exposition, given by the name of the place, as well as geocoded information.
+                </p>
+                <h6 style="color: #f49c45"><small>Example:</small></h6>
+                <div id="Paris">
+                  <a href="https://www.geonames.org/2988507" style="color:#ffff" class="badge rounded-pill bg-secondary">"Paris"</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

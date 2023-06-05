@@ -144,7 +144,7 @@
 <main id="main" class="main">
 
     <div class="pagetitle">
-        <h1>Dashboard: Get to know the Correspondence</h1>
+        <h1>Dashboard: Connecting Knowledge Is Like Stargazing</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -158,10 +158,10 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Welcome to the World of Constance de Salm (1767–1845) and Her Virtual Salon</h5>
-                <p class="card-text">With this interactive dashboard, you can get to know the correspondence of Constance de Salm, a French female poet and writer of the 18th and 19th century.
+                <h5 class="card-title">Welcome to the Virtual Salon of Constance de Salm (1767–1845)</h5>
+                <p class="card-text">With this interactive dashboard, you can take the plunge into the world of Constance de Salm, a French female poet and writer of the 18th and 19th century.
                     The project originated at the Historical German Institute in Paris (Deutsches Historisches Institut Paris, DHIP) in 2010 and is actively being worked on for over ten years.
-                    The <strong><a id="link-info" href="https://constance-de-salm.de">official website</a></strong> includies facsimiles and further important information on the main projects.
+                    The <strong><a id="link-info" href="https://constance-de-salm.de">official website</a></strong> includes facsimiles and further important information on the main projects.
                     <br>
                     Within my Master's thesis, I continued working with the data about and from the correspondence.
                     The main goal is to merge all metadata into a linked open data (RDF) model, to use text mining techniques for semi-automatic information retrieval and to
@@ -178,7 +178,7 @@
                         </h2>
                         <div id="faqsTwo-1" class="accordion-collapse collapse" data-bs-parent="#faq-group-2">
                             <div class="accordion-body">
-                                This dashboard offers visualisations – including an interactive knowledge graph – about the <strong><a id="link-info" href="https://constance-de-salm.de">correspondence of Constance de Salm (1767–1845)</a></strong> that I analysed and worked on for my Master' thesis.
+                                This dashboard offers visualisations – including an interactive knowledge graph – about the <strong><a id="link-info" href="https://constance-de-salm.de">correspondence of Constance de Salm (1767–1845)</a></strong> that I analysed and worked on for my Master's thesis.
                             </div>
                         </div>
                     </div>
@@ -1387,8 +1387,8 @@
                 <div class="pt-2">
                     <h>3. A Special Way of Interacting With the Graph: Search!</h>
                     <p>In order to search for nodes in the graph, you can type a <span style="color: #f48c24">single-word search term</span> into the search bar and then proceed to click on <span class="badge rounded-pill bg-secondary">search in graph</span>.
-                        If the search term was found in one or more of the nodes, a new, smaller graph is displayed. Nodes that can be queried this way are addressees, keywords, automatic keywords, dates, sentiments or places of exposition.
-                        In the search-view, you can double-click on nodes to show their context. Getting back to the initial, full-view is possible via reloading the graph.
+                        If the search term was found in one or more of the nodes, a new, smaller graph is displayed. Nodes that can be queried this way are addressees, keywords, automatic keywords, dates, sentiments or places of exposition. For keywords, you can search in English,
+                        German and French. In the search-view, you can double-click on nodes to show their context. Getting back to the initial, full-view is possible via reloading the graph.
                         <br>Try searching for terms that interest you, e.g.  <span style="color: #f48c24"><em>health</em></span>  or  <span style="color: #f48c24"><em>Paris</em></span>!</p>
                 </div>
                 <h6>More elaborated background information and an overview of the icons and their meaning can be found under <strong><a id="link-info" href="pages-faq.html">F.A.Q.</a></strong>!</h6>
@@ -1397,7 +1397,7 @@
             <div id="search-graph" style="padding: 10px;">
                 <input id="userInput" type="text" class="form-control-lg flex-column" style="width:20%; border-color: #f8bd70;"
                        placeholder="search for a node">
-                <button type="button" class="btn btn-primary flex-column" onclick="returnText()" style="width:15%"><i
+                <button type="button" class="btn btn-primary flex-column" onclick="returnText()" style="width:20%"><i
                         class="bi bi-search me-1"></i>
                     search in graph
                 </button>
@@ -1445,8 +1445,8 @@
 
                         },
                         images: {
-                            'wv__Addressee': 'img/twemoji/pen-nib-solid.svg',
-                            'wv__Sender': 'img/cds_icon_circle.png'
+                            'wv__Addressee': '/assets/img/fontawesome/pen-nib-solid.svg',
+                            'wv__Sender': '/assets/img/cds_icon_circle.png'
                         },
                         minCollision: 60,
                         neo4jDataUrl: jsonFile,
@@ -1511,7 +1511,7 @@
 
                         },
                         images: {
-                            'wv__Addressee': '/assets/img/twemoji/pen-nib-solid.svg',
+                            'wv__Addressee': '/assets/img/fontawesome/pen-nib-solid.svg',
                             'wv__Sender': '/assets/img/cds_icon_circle.png'
                         },
                         minCollision: 60,
