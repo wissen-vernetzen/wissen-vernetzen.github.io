@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Wissen vernetzen: Dashboard</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="/assets/img/wive.png" rel="icon">
+    <link href="/assets/img/wive.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts – Local Font Embedding -->
+    <link href="assets/css/localfonts.css" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- neo4jd3 -->
+    <link rel="stylesheet" href="assets/css/neo4jd3.css">
+    <link rel="stylesheet" href="https://eisman.github.io/neo4jd3/css/font-awesome.min.css">
+
+
+    <style>
+        .neo4jd3 {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /*#loading_indicator {*/
+        /*    position: absolute;*/
+        /*    top: 0;*/
+        /*    bottom: 0;*/
+        /*    left: 0;*/
+        /*    right: 0;*/
+        /*    margin: auto;*/
+        /*    border: 10px solid grey;*/
+        /*    border-radius: 50%;*/
+        /*    border-top: 10px solid blue;*/
+        /*    width: 100px;*/
+        /*    height: 100px;*/
+        /*    color: #f48c24;*/
+        /*    animation: spinIndicator 1s linear infinite;*/
+        /*}*/
+
+        /*@keyframes spinIndicator {*/
+        /*    100% {*/
+        /*        transform: rotate(360deg);*/
+        /*    }*/
+        /*}*/
+
+        #chartdiv {
+            width: 100%;
+            height: 500px;
+        }
+
+        #chartdiv-addressees {
+            width: 100%;
+            height: 500px;
+        }
+
+        #chartdiv-years {
+            height: 1000px !important;
+        }
+    </style>
+
+
+    <!-- =======================================================
+    * Template Name: NiceAdmin
+    * Updated: Mar 09 2023 with Bootstrap v5.2.3
+    * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+            <img src="/assets/img/wvn-2.png" alt="">
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+</header><!-- End Header -->
+
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+        <li class="nav-item">
+            <a class="nav-link " href="index.html">
+                <i class="bi bi-grid"></i>
+                <span>Knowledge Graph and Charts</span>
+            </a>
+        </li><!-- End Dashboard Nav -->
+
+
+<!--        <li class="nav-heading">Get to know me</li>-->
+
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>F.A.Q</span>
+            </a>
+        </li><!-- End F.A.Q Page Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="ontology.html">
+                <i class="bi bi-bounding-box-circles"></i>
+                <span>Ontology</span>
+            </a>
+        </li><!-- End Contact Page Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="pages-contact.html">
+                <i class="bi bi-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </li><!-- End Contact Page Nav -->
+    </ul>
+
+</aside><!-- End Sidebar-->
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Dashboard: Get to know the Correspondence</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <!-- COOL STATS -->
+    <!-- INTRODUCTION -->
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Welcome to the World of Constance de Salm (1767–1845) and Her Virtual Salon</h5>
+                <p class="card-text">With this interactive dashboard, you can get to know the correspondence of Constance de Salm, a French female poet and writer of the 18th and 19th century.
+                    The project originated at the Historical German Institute in Paris (Deutsches Historisches Institut Paris, DHIP) in 2010 and is actively being worked on for over ten years.
+                    The <strong><a id="link-info" href="https://constance-de-salm.de">official website</a></strong> includies facsimiles and further important information on the main projects.
+                    <br>
+                    Within my Master's thesis, I continued working with the data about and from the correspondence.
+                    The main goal is to merge all metadata into a linked open data (RDF) model, to use text mining techniques for semi-automatic information retrieval and to
+                    build an interactive knowledge graph that works as a fun gateway to information about the correspondence.
+                    On this dashboard, you can get a first impression of certain stats, as well as interact with the latest (reduced) version of the knowledge graph.
+                </p>
+                <div class="accordion accordion-flush" id="faq-group-2">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" data-bs-target="#faqsTwo-1" type="button" data-bs-toggle="collapse">
+                                <strong>TL;DR</strong>
+                            </button>
+                        </h2>
+                        <div id="faqsTwo-1" class="accordion-collapse collapse" data-bs-parent="#faq-group-2">
+                            <div class="accordion-body">
+                                This dashboard offers visualisations – including an interactive knowledge graph – about the <strong><a id="link-info" href="https://constance-de-salm.de">correspondence of Constance de Salm (1767–1845)</a></strong> that I analysed and worked on for my Master' thesis.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- PLACES OF EXPOSITION -->
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Most Prominent Places of Exposition</h5>
+                    <p class="card-text">Explore the most frequent places of exposition of the letters. Zoom in via the mouse-wheel to get a close-up of the locations on the map.</p>
+                    <a href="#search-graph" class="btn btn-primary">Find letters by their place of exposition!</a>
+                    <div id="chartdiv"></div>
+                    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+                    <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+                    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+                    <script src="https://cdn.amcharts.com/lib/5/geodata/continentsLow.js"></script>
+                    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+                    <!-- Chart code -->
+                    <script>
+                        am5.ready(function () {
+
+// Create root and chart
+                            var root = am5.Root.new("chartdiv");
+
+// Set themes
+                            root.setThemes([
+                                am5themes_Animated.new(root)
+                            ]);
+
+
+// ====================================
+// Create map
+// ====================================
+
+                            var map = root.container.children.push(
+                                am5map.MapChart.new(root, {
+                                    projection: am5map.geoNaturalEarth1()
+                                })
+                            );
+
+// Create polygon series
+                            var polygonSeries = map.series.push(
+                                am5map.MapPolygonSeries.new(root, {
+                                    geoJSON: am5geodata_continentsLow,
+                                    exclude: ["antarctica"],
+                                    fill: am5.color(0xbbbbbb)
+                                })
+                            );
+
+                            var pointSeries = map.series.push(
+                                am5map.MapPointSeries.new(root, {})
+                            );
+
+                            var colorSet = am5.ColorSet.new(root, {step: 2});
+
+                            pointSeries.bullets.push(function (root, series, dataItem) {
+                                var value = dataItem.dataContext.value;
+
+                                var container = am5.Container.new(root, {});
+                                var color = colorSet.next();
+                                var radius = 15 + value * 0.05;
+                                var circle = container.children.push(am5.Circle.new(root, {
+                                    radius: radius,
+                                    fill: color,
+                                    dy: -radius * 2
+                                }))
+
+                                var pole = container.children.push(am5.Line.new(root, {
+                                    stroke: color,
+                                    height: -40,
+                                    strokeGradient: am5.LinearGradient.new(root, {
+                                        stops: [
+                                            {opacity: 1},
+                                            {opacity: 1},
+                                            {opacity: 0}
+                                        ]
+                                    })
+                                }));
+
+                                var label = container.children.push(am5.Label.new(root, {
+                                    text: value,
+                                    fill: am5.color(0xffffff),
+                                    fontWeight: "400",
+                                    centerX: am5.p50,
+                                    centerY: am5.p50,
+                                    dy: -radius * 2
+                                }))
+
+                                var titleLabel = container.children.push(am5.Label.new(root, {
+                                    text: dataItem.dataContext.title,
+                                    fill: color,
+                                    fontWeight: "500",
+                                    fontSize: "1em",
+                                    centerY: am5.p50,
+                                    dy: -radius * 2,
+                                    dx: radius
+                                }))
+
+                                return am5.Bullet.new(root, {
+                                    sprite: container
+                                });
+                            });
+
+
+// ====================================
+// Create pins
+// ====================================
+                            var data = [{
+                                "title": "Bruxelles",
+                                "latitude": 50.85045,
+                                "longitude": 4.34878,
+                                "width": 50,
+                                "height": 50,
+                                "value": 9
+                            }, {
+                                "title": "Jüchen",
+                                "latitude": 51.1,
+                                "longitude": 6.5,
+                                "width": 50,
+                                "height": 50,
+                                "value": 803
+                            }, {
+                                "title": "Düsseldorf",
+                                "latitude": 51.22172,
+                                "longitude": 6.77616,
+                                "width": 50,
+                                "height": 50,
+                                "value": 1
+                            }, {
+                                "title": "Alfter",
+                                "latitude": 50.73333,
+                                "longitude": 7.01667,
+                                "width": 50,
+                                "height": 50,
+                                "value": 1
+                            }, {
+                                "title": "Valenciennes",
+                                "latitude": 50.35909,
+                                "longitude": 3.52506,
+                                "width": 50,
+                                "height": 50,
+                                "value": 1
+                            }, {
+                                "title": "Paris",
+                                "latitude": 48.85341,
+                                "longitude": 2.3488,
+                                "width": 50,
+                                "height": 50,
+                                "value": 553
+                            }, {
+                                "title": "Aachen",
+                                "latitude": 50.77664,
+                                "longitude": 6.08342,
+                                "width": 10,
+                                "height": 10,
+                                "value": 164
+                            }];
+
+                            for (var i = 0; i < data.length; i++) {
+                                var d = data[i];
+                                pointSeries.data.push({
+                                    geometry: {type: "Point", coordinates: [d.longitude, d.latitude]},
+                                    title: d.title,
+                                    value: d.value
+                                });
+                            }
+
+                        }); // end am5.ready()
+                    </script>
+                </div>
+            </div>
+        </div>
+        <!-- ADDRESSEES -->
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Main Addressees</h5>
+                    <p class="card-text">Overview of all addressees Constance de Salm sent letters to. The big circles show those she wrote to the most. Hovering over a bubble will display
+                    the correspondence frequency. You can also zoom in to read the full names.</p>
+                    <a href="#search-graph" class="btn btn-primary">Find addressees and their letters!</a>
+                    <div id="chartdiv-addressees"></div>
+                    <!-- Resources -->
+                    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+                    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+                    <script src="https://cdn.amcharts.com/lib/4/plugins/forceDirected.js"></script>
+                    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+                    <!-- Chart code -->
+                    <script>
+                        am4core.ready(function () {
+
+// Themes begin
+                            am4core.useTheme(am4themes_animated);
+// Themes end
+
+                            var chart = am4core.create("chartdiv-addressees", am4plugins_forceDirected.ForceDirectedTree);
+
+                            var networkSeries = chart.series.push(new am4plugins_forceDirected.ForceDirectedSeries())
+
+// var request = new XMLHttpRequest();
+// request.open("GET", "../../data/addressees_pivot-subset.json", false);
+// request.send(null)
+// var json_file = JSON.parse(request.responseText);
+// alert (mjson_file.result[0]);
+
+                            networkSeries.data = [{
+                                "name": "Agoub, Joseph Elie",
+                                "value": 3
+                            }, {
+                                "name": "Alexander I., Zar von Russland",
+                                "value": 2
+                            }, {"name": "Alibert, Jean-Louis, baron ", "value": 5}, {
+                                "name": "Allenet (?), Monsieur",
+                                "value": 1
+                            }, {
+                                "name": "Alopaeus, David Maximowitsch",
+                                "value": 1
+                            }, {"name": "Amalric, François de Sales", "value": 9}, {
+                                "name": "Andrieux, François",
+                                "value": 11
+                            }, {
+                                "name": "Anglemont, Edouard d'",
+                                "value": 2
+                            }, {
+                                "name": "Arnim-Boitzenburg, Anna Caroline von, geb. von der Schulenburg",
+                                "value": 1
+                            }, {"name": "Asfeld, L. C. d'", "value": 3}, {
+                                "name": "Aubard / Aubart, Monsieur",
+                                "value": 1
+                            }, {
+                                "name": "Audiffret, Florimond Louis, comte d'",
+                                "value": 16
+                            }, {"name": "Audouard, Monsieur", "value": 1}, {
+                                "name": "Audouin de Géronval, Maurice",
+                                "value": 5
+                            }, {"name": "Auger, Louis Simon", "value": 3}, {
+                                "name": "Babois, Marguerite Victoire",
+                                "value": 6
+                            }, {
+                                "name": "Baden, Stéphanie von, geb. de Beauharnais",
+                                "value": 1
+                            }, {"name": "Bailly, Jean-Louis-Armand", "value": 1}, {
+                                "name": "Barbier, Antoine-Alexandre",
+                                "value": 77
+                            }, {"name": "Barbier, Louis-Nicolas", "value": 29}, {
+                                "name": "Bard, Charles Joseph",
+                                "value": 2
+                            }, {"name": "Bavier, Major de", "value": 1}, {
+                                "name": "Bavier, Monsieur de",
+                                "value": 2
+                            }, {
+                                "name": "Béarn, Alexandre de Galard de Brassac de",
+                                "value": 1
+                            }, {
+                                "name": "Beaufort d'Hautpoul, Anne-Marie, comtesse de, geb. de Montgeroult",
+                                "value": 1
+                            }, {"name": "Becdelièvre, comtesse de", "value": 1}, {
+                                "name": "Bélanger, Monsieur",
+                                "value": 2
+                            }, {
+                                "name": "Beltrami, Giacomo Costantino",
+                                "value": 2
+                            }, {
+                                "name": "Bernard de Rennes, Louis Bernard, gen.",
+                                "value": 4
+                            }, {
+                                "name": "Berr / Behr, Michel",
+                                "value": 1
+                            }, {
+                                "name": "Berr, Madame (Ehefrau von Michel Berr)",
+                                "value": 1
+                            }, {"name": "Bertin, Louis-François", "value": 1}, {
+                                "name": "Berville, Saint-Albin",
+                                "value": 24
+                            }, {
+                                "name": "Beuchot, Adrien-Jean-Quentin (?)",
+                                "value": 1
+                            }, {
+                                "name": "Biergans, Joseph Wilhelm (Staatsanwalt in Köln)",
+                                "value": 1
+                            }, {"name": "Bignan, Anne", "value": 10}, {
+                                "name": "Bigot de Préameneu, Félix Julien Jean",
+                                "value": 1
+                            }, {
+                                "name": "Bonafous, Matthieu",
+                                "value": 1
+                            }, {
+                                "name": "Bonaparte, Pauline, verh. Borghese",
+                                "value": 1
+                            }, {"name": "Boucharlat, Jean-Louis", "value": 36}, {
+                                "name": "Bouché Durmont, Monsieur",
+                                "value": 1
+                            }, {"name": "Bouilly, Monsieur", "value": 1}, {
+                                "name": "Boulay de la Meurthe, Monsieur",
+                                "value": 2
+                            }, {
+                                "name": "Brack / Bracq, Monsieur de (Directeur des douanes impériales et consul général des états de Lucca et Piombino)",
+                                "value": 1
+                            }, {"name": "Breguet, Abraham Louis (?)", "value": 2}, {
+                                "name": "Briquet, Fortunée",
+                                "value": 1
+                            }, {"name": "Buchon, Monsieur", "value": 2}, {
+                                "name": "C., Monsieur",
+                                "value": 1
+                            }, {
+                                "name": "Cabanis, Charlotte, geb. de Grouchy",
+                                "value": 1
+                            }, {
+                                "name": "Cabanon, Mademoiselle Cléonis",
+                                "value": 1
+                            }, {
+                                "name": "Candolle, Augustin-Pyrame de",
+                                "value": 2
+                            }, {
+                                "name": "Canot / Canaux, Monsieur (unklar ob Vertrauensmann der Salm-Dyck oder/und Cousin der Francq?)",
+                                "value": 1
+                            }, {
+                                "name": "Carrion de Nisas, Henri de, baron",
+                                "value": 1
+                            }, {"name": "Caumont, Arcisse de", "value": 1}, {
+                                "name": "Césarini, Jacques-Auguste-Vié de",
+                                "value": 2
+                            }, {
+                                "name": "Châlot, Madame de (Siehe Vanhove)",
+                                "value": 1
+                            }, {
+                                "name": "Châtelain, Jean-Baptiste-François, chevalier de",
+                                "value": 2
+                            }, {"name": "Châtelain, Monsieur", "value": 14}, {
+                                "name": "Chazet, Pierre A[lissan] de",
+                                "value": 2
+                            }, {"name": "Cherubini, Luigi", "value": 1}, {
+                                "name": "Christian, Auguste de",
+                                "value": 2
+                            }, {"name": "Christian, Monsieur (de?)", "value": 2}, {
+                                "name": "Clavier, Étienne",
+                                "value": 1
+                            }, {
+                                "name": "Coëls, Friedrich Josef Antonius von",
+                                "value": 2
+                            }, {"name": "Colbert, Jean Baptiste", "value": 1}, {
+                                "name": "Colet, Hippolyte",
+                                "value": 1
+                            }, {"name": "Colet, Louise, geb. Révoil", "value": 2}, {
+                                "name": "Comminges, comte de",
+                                "value": 1
+                            }, {"name": "Comte, Achille", "value": 1}, {
+                                "name": "Constant, Benjamin",
+                                "value": 1
+                            }, {
+                                "name": "Cooper, James Fenimore",
+                                "value": 1
+                            }, {
+                                "name": "Cordellier-Delanoue, Étienne Casimir Hippolyte",
+                                "value": 2
+                            }, {
+                                "name": "Coubard d'Aulnay, Germain Etienne",
+                                "value": 3
+                            }, {
+                                "name": "Courier de Méré, Paul-Louis",
+                                "value": 1
+                            }, {
+                                "name": "Courier, Esther Etienne Herminie, geb. Clavier",
+                                "value": 1
+                            }, {
+                                "name": "Cubières-Palmézeaux, Michel de",
+                                "value": 3
+                            }, {
+                                "name": "Dahmen, Ida, verh. Mengelbier",
+                                "value": 1
+                            }, {
+                                "name": "Dalberg, Karl Theodor Reichsfreiherr von",
+                                "value": 3
+                            }, {"name": "Dauriat, Louise", "value": 8}, {
+                                "name": "David, Monsieur",
+                                "value": 1
+                            }, {"name": "Delestre-Poirson, Charles-Gaspard", "value": 2}, {
+                                "name": "Denis, Ferdinand",
+                                "value": 4
+                            }, {"name": "Depping, Georges-Bernard", "value": 19}, {
+                                "name": "Deshayes, Monsieur",
+                                "value": 1
+                            }, {"name": "Devise, Monsieur de (Cousin der CdS)", "value": 1}, {
+                                "name": "Didot, Firmin",
+                                "value": 4
+                            }, {
+                                "name": "Dournel de Bonnival, Monsieur",
+                                "value": 1
+                            }, {
+                                "name": "Drais, Pierre (Vertrauensmann der CdS)",
+                                "value": 50
+                            }, {"name": "Du Château, Monsieur", "value": 1}, {
+                                "name": "Duchosal, Marie-Émile-Guillaume",
+                                "value": 1
+                            }, {"name": "Dulac, comte", "value": 1}, {
+                                "name": "Dumas, Alexandre",
+                                "value": 4
+                            }, {
+                                "name": "Dumas, Jean-Baptiste (von der Académie in Lyon?)",
+                                "value": 1
+                            }, {
+                                "name": "Dupaty, Emmanuel Mercier",
+                                "value": 2
+                            }, {
+                                "name": "Dupont de l'Étang, Pierre Antoine, comte",
+                                "value": 1
+                            }, {
+                                "name": "Duval, Alexandre, eigentl. Alexandre-Vincent Pineux",
+                                "value": 10
+                            }, {
+                                "name": "Duval, Amaury, eigentl. Charles-Alexandre-Amaury Pineux",
+                                "value": 29
+                            }, {"name": "Duval, Henri", "value": 1}, {
+                                "name": "Émeric-David, Toussaint Bernard",
+                                "value": 1
+                            }, {
+                                "name": "Evelt, Christian (Rechtsanwalt in Düsseldorf)",
+                                "value": 1
+                            }, {
+                                "name": "Fabre, Auguste-Jean-Raymond",
+                                "value": 2
+                            }, {
+                                "name": "Fallenstein, Georg Friedrich (?)",
+                                "value": 1
+                            }, {
+                                "name": "Faucheux, Monsieur (Anwalt der Erben Pipelet in Tours)",
+                                "value": 1
+                            }, {
+                                "name": "Faulcon de La Parisière, Marie-Félix",
+                                "value": 1
+                            }, {"name": "Fayolle, François-Joseph-Marie", "value": 2}, {
+                                "name": "Fée, Cécile",
+                                "value": 2
+                            }, {"name": "Feuillet, Laurent", "value": 1}, {
+                                "name": "Forster, Charles (auch Karol)",
+                                "value": 4
+                            }, {
+                                "name": "Fossé-Darcosse, François Barthélémy Thérèse Émilien",
+                                "value": 1
+                            }, {
+                                "name": "Français de Nantes, eigentl. Antoine Français",
+                                "value": 1
+                            }, {"name": "Français, Madame", "value": 1}, {
+                                "name": "François de Méricourt, Madame",
+                                "value": 1
+                            }, {
+                                "name": "François, Madame",
+                                "value": 1
+                            }, {
+                                "name": "Francq, Agathe Clémence, baronne de, geb. Pipelet, gen. Minette",
+                                "value": 108
+                            }, {"name": "Francq, Alexandre de", "value": 2}, {
+                                "name": "Francq, Constant de",
+                                "value": 4
+                            }, {
+                                "name": "Francq, Félix, baron de",
+                                "value": 17
+                            }, {
+                                "name": "Francq, Louis Bernard, baron de",
+                                "value": 1
+                            }, {
+                                "name": "Francq, Ozélie (Azélie), baronne de",
+                                "value": 2
+                            }, {
+                                "name": "Friedrich Wilhelm III., König von Preußen",
+                                "value": 12
+                            }, {
+                                "name": "Friedrich Wilhelm IV., König von Preußen",
+                                "value": 1
+                            }, {
+                                "name": "Gall, Dr. Franz Joseph",
+                                "value": 1
+                            }, {
+                                "name": "Gay, Sigismond, baron de Lupigny",
+                                "value": 2
+                            }, {
+                                "name": "Gay, Sophie, baronne de Lupigny, geb. Nichault de la Valette",
+                                "value": 15
+                            }, {"name": "Gence, Jean-Baptiste-Modeste", "value": 2}, {
+                                "name": "Georgeon, General",
+                                "value": 1
+                            }, {
+                                "name": "Girardin, Émile de",
+                                "value": 2
+                            }, {
+                                "name": "Girodet-Trioson, Anne-Louis, eigentl. Girodet de Roussy",
+                                "value": 1
+                            }, {
+                                "name": "Gosse, Étienne (Redakteur der \"Pandore\")",
+                                "value": 2
+                            }, {
+                                "name": "Gouvion Saint-Cyr, Anne de",
+                                "value": 1
+                            }, {
+                                "name": "Gudin de La Brenellerie, Paul-Philippe",
+                                "value": 3
+                            }, {
+                                "name": "Guerrier de Dumast, Prosper",
+                                "value": 1
+                            }, {
+                                "name": "Guillon Lethière, Guillaume",
+                                "value": 1
+                            }, {
+                                "name": "Gumppenberg, Fanny Baronin von",
+                                "value": 1
+                            }, {
+                                "name": "Guyet, Emma, eigentlich Guyet-Desfontaines, geb. Duval, in 1. Ehe verh. Chassériau",
+                                "value": 2
+                            }, {"name": "Guyet, Isidore", "value": 3}, {
+                                "name": "Hatzfeldt, Fürst von",
+                                "value": 3
+                            }, {"name": "Heinsberg, Herr von", "value": 2}, {
+                                "name": "Hémery, Marguerite, verh. Ponce",
+                                "value": 1
+                            }, {
+                                "name": "Hompesch-Rurich, Graf Herrmann Philipp von (1797-1857)",
+                                "value": 2
+                            }, {
+                                "name": "Hompesch-Rurich, Johann Baptist Ludwig Graf von (1759-1833), Vater von Hermann Philipp",
+                                "value": 1
+                            }, {
+                                "name": "Hompesch, Thérèse-Angélique, Gräfin von, geb. von Aarschot-Schoonhoven",
+                                "value": 18
+                            }, {"name": "Humboldt, Alexander von", "value": 8}, {
+                                "name": "Jaquotot, Marie-Victoire",
+                                "value": 2
+                            }, {"name": "Jay, Antoine", "value": 1}, {
+                                "name": "Jobey de Ligny, Gabrielle",
+                                "value": 1
+                            }, {"name": "Jomard, Edme François", "value": 4}, {
+                                "name": "Jullien de Paris, Marc-Antoine",
+                                "value": 65
+                            }, {
+                                "name": "Jussieu, Adrien de",
+                                "value": 2
+                            }, {
+                                "name": "La Chabeaussière, Ange Étienne Xavier Poisson de",
+                                "value": 1
+                            }, {
+                                "name": "La Fayette, Joseph du Motier, marquis de ",
+                                "value": 1
+                            }, {
+                                "name": "La Suze, Pierre Joseph de Sars de",
+                                "value": 2
+                            }, {
+                                "name": "Labouïsse-Rochefort, Jean-Pierre-Jacques-Auguste de",
+                                "value": 1
+                            }, {
+                                "name": "Ladoucette, Eugène de",
+                                "value": 1
+                            }, {
+                                "name": "Ladoucette, Jean Charles François, baron de",
+                                "value": 174
+                            }, {
+                                "name": "Lainé, Monsieur",
+                                "value": 3
+                            }, {
+                                "name": "Lamardelle, Pierre Suzanne Marie, baron de",
+                                "value": 2
+                            }, {"name": "Langlès, Louis-Mathieu", "value": 3}, {
+                                "name": "Lantier, Étienne-François de",
+                                "value": 12
+                            }, {
+                                "name": "Laplace, Madame de",
+                                "value": 1
+                            }, {
+                                "name": "Larcher de Chamont, François, chevalier",
+                                "value": 1
+                            }, {"name": "Larnac, Monsieur", "value": 1}, {
+                                "name": "Laya, Aglaé, in zweiter Ehe Comte",
+                                "value": 15
+                            }, {"name": "Laya, Alexandre", "value": 1}, {
+                                "name": "Laya, Jean-Louis",
+                                "value": 6
+                            }, {"name": "Lebrun", "value": 1}, {
+                                "name": "Legouvé, Gabriel-Marie",
+                                "value": 1
+                            }, {"name": "Lemazurier, Pierre-David", "value": 1}, {
+                                "name": "Lémontey, Pierre-Édouard",
+                                "value": 1
+                            }, {
+                                "name": "Lenders, Fräulein (von?)",
+                                "value": 1
+                            }, {
+                                "name": "Leroy de Bacre, Alexandre Joseph",
+                                "value": 1
+                            }, {
+                                "name": "Leroy de Bacre, Félicie, geb. Dalpayet",
+                                "value": 11
+                            }, {
+                                "name": "Leyen, Gustav Heinrich von der (Sohn von Friedrich Heinrich)",
+                                "value": 1
+                            }, {
+                                "name": "Locquenghien, Judith Anna Maria von, geb. von Dorth",
+                                "value": 7
+                            }, {
+                                "name": "Louis-Philippe Ier, König der Franzosen",
+                                "value": 1
+                            }, {
+                                "name": "Löwenhielm, Jacquette Gräfin",
+                                "value": 1
+                            }, {
+                                "name": "Maison, Eugène, vicomte (Sohn des Nicolas Joseph)",
+                                "value": 2
+                            }, {
+                                "name": "Maison, général, später maréchal Nicolas Joseph",
+                                "value": 12
+                            }, {
+                                "name": "Maison, Joseph, vicomte (Sohn des Nicolas Joseph)",
+                                "value": 1
+                            }, {
+                                "name": "Maison, Joséphine (Tochter des Nicolas Joseph, +1828/1829)",
+                                "value": 1
+                            }, {
+                                "name": "Maison, Madeleine, geb. Weydold (Ehefrau des Nicolas Joseph)",
+                                "value": 4
+                            }, {"name": "Malepeyre, Léopold", "value": 1}, {
+                                "name": "Maleszewski, comtesse de",
+                                "value": 7
+                            }, {
+                                "name": "Malo, Charles",
+                                "value": 11
+                            }, {
+                                "name": "Maltitz, [Gotthilf August?] Freiherr von",
+                                "value": 1
+                            }, {"name": "Marrast, Armand", "value": 1}, {
+                                "name": "Marron, Paul-Henri",
+                                "value": 5
+                            }, {
+                                "name": "Mathon de Fogères, Henri-Napoléon",
+                                "value": 4
+                            }, {
+                                "name": "Maugirard, Victorine",
+                                "value": 1
+                            }, {
+                                "name": "Mazois, Jenny-Malvina, geb. Pineux-Duval (Tochter des Alexandre Duval)",
+                                "value": 1
+                            }, {
+                                "name": "Méchin, Edmond",
+                                "value": 1
+                            }, {
+                                "name": "Mecklenburg-Strelitz, Karl Herzog von (Bruder der Therese von Thurn und Taxis)",
+                                "value": 1
+                            }, {"name": "Méneval, Claude François de", "value": 1}, {
+                                "name": "Méricourt, Françoise de",
+                                "value": 2
+                            }, {
+                                "name": "Miger, Simon Charles",
+                                "value": 1
+                            }, {
+                                "name": "Miollis, Sextius Alexandre François de",
+                                "value": 1
+                            }, {
+                                "name": "Mirault, Monsieur (Claude-François?, Mitglied des Athénée des arts)",
+                                "value": 29
+                            }, {"name": "Monglave, Eugène de", "value": 1}, {
+                                "name": "Montémont, Albert",
+                                "value": 30
+                            }, {"name": "Montferrand, Monsieur de", "value": 6}, {
+                                "name": "Montigny, Caroline de",
+                                "value": 9
+                            }, {
+                                "name": "Moreau, César",
+                                "value": 1
+                            }, {
+                                "name": "Morgan, Lady Sydney, geb. Sydney Owenson",
+                                "value": 2
+                            }, {"name": "Murrey, Monsieur Gaillard de", "value": 1}, {
+                                "name": "Naigeon, Céleste",
+                                "value": 8
+                            }, {"name": "Naigeon, Jacques-André", "value": 1}, {
+                                "name": "Naigeon, Mademoiselle",
+                                "value": 1
+                            }, {"name": "Naigeon, Monsieur", "value": 1}, {
+                                "name": "Nanteuil, C. de",
+                                "value": 1
+                            }, {
+                                "name": "Napoléon Ier Bonaparte, Kaiser der Franzosen",
+                                "value": 1
+                            }, {
+                                "name": "Nees von Esenbeck, Theodor Friedrich Ludwig",
+                                "value": 1
+                            }, {
+                                "name": "Niboyet, Eugénie, geb. Mouchon",
+                                "value": 1
+                            }, {
+                                "name": "Nicolle, Dominique-Charles, abbé",
+                                "value": 1
+                            }, {
+                                "name": "Novakowsky, Camille de, geb. Chomereau",
+                                "value": 7
+                            }, {"name": "O'Sullivan, Daniel", "value": 1}, {
+                                "name": "Orloff, Grégoire, comte de",
+                                "value": 2
+                            }, {
+                                "name": "Paganel, Camille",
+                                "value": 10
+                            }, {
+                                "name": "Paganel, Madame G., geb. von Senfft-Pilsach",
+                                "value": 3
+                            }, {
+                                "name": "Paillet, Alphonse Gabriel Victor (Rechtsanwalt)",
+                                "value": 6
+                            }, {
+                                "name": "Paillet, Julien, gen. Paillet de Plombières (Schriftsteller)",
+                                "value": 3
+                            }, {
+                                "name": "Pailliet, Jean Baptiste Joseph (Anwalt der CdS in Orléans, um 1829)",
+                                "value": 71
+                            }, {
+                                "name": "Papion du Château, Pierre Nicolas, baron",
+                                "value": 1
+                            }, {"name": "Paxton, Maria Alecia", "value": 1}, {
+                                "name": "Pestel, Philipp von",
+                                "value": 1
+                            }, {"name": "Petriconi, Jean Laurent de", "value": 1}, {
+                                "name": "Picard, Louis-Benoît",
+                                "value": 2
+                            }, {"name": "Pillet, Fabien", "value": 3}, {
+                                "name": "Pinaud, Joseph",
+                                "value": 1
+                            }, {"name": "Pinet, Fortuné", "value": 1}, {
+                                "name": "Plancy, Amélie de, geb. de Ladoucette",
+                                "value": 1
+                            }, {"name": "Ponce, Nicolas", "value": 11}, {
+                                "name": "Pougens, Charles de",
+                                "value": 9
+                            }, {
+                                "name": "Preußen, Marie Anne Amalie, Prinzessin von, geb. Hessen-Homburg",
+                                "value": 1
+                            }, {
+                                "name": "Preußen, Prinz Friedrich von (Neffe Friedrich Wilhelms III.)",
+                                "value": 1
+                            }, {
+                                "name": "Prony, Gaspard Riche, baron de",
+                                "value": 2
+                            }, {"name": "Pröpper, Ferdinand von", "value": 1}, {
+                                "name": "Pröpper, Herr von",
+                                "value": 1
+                            }, {"name": "Pröpper, Paul Joseph von", "value": 1}, {
+                                "name": "Prous, Henry",
+                                "value": 16
+                            }, {"name": "Pugnet, Monsieur", "value": 1}, {
+                                "name": "Quetelet, Adolphe",
+                                "value": 1
+                            }, {
+                                "name": "Raboteau, Emélie, verh. Ranson",
+                                "value": 1
+                            }, {"name": "Raboteau, Paul Étienne", "value": 4}, {
+                                "name": "Raboteau, Pierre Paul ",
+                                "value": 12
+                            }, {
+                                "name": "Ramey, Etienne-Jules",
+                                "value": 1
+                            }, {
+                                "name": "Reiffenberg, Frédéric, baron de (Löwen/Louvain)",
+                                "value": 1
+                            }, {
+                                "name": "Reinwardt, Kaspar Georg Karl",
+                                "value": 1
+                            }, {
+                                "name": "Révéroni, Jacques-Antoine, baron de Saint-Cyr",
+                                "value": 1
+                            }, {
+                                "name": "Richard, Carl (Major in Aachen)",
+                                "value": 2
+                            }, {
+                                "name": "Riche de Prony, Gaspard, baron",
+                                "value": 1
+                            }, {
+                                "name": "Richelieu, Armand Emmanuel du Plessis, duc de",
+                                "value": 1
+                            }, {"name": "Rittinghausen, Moritz", "value": 1}, {
+                                "name": "Ritz, Wilhelm",
+                                "value": 13
+                            }, {
+                                "name": "Roederer, Pierre-Louis",
+                                "value": 1
+                            }, {
+                                "name": "Roger, Jacques-François, baron",
+                                "value": 1
+                            }, {
+                                "name": "Roguet, Pauline, geb. de Ladoucette",
+                                "value": 1
+                            }, {
+                                "name": "Roguet. comte Christophe Michel (Schwiegersohn von Jean Charles François de Ladoucette)",
+                                "value": 1
+                            }, {
+                                "name": "Roosmalen, Auguste de",
+                                "value": 2
+                            }, {
+                                "name": "Roux de Rochelle, Jean-Baptiste-Gaspard",
+                                "value": 2
+                            }, {
+                                "name": "Saint-Cricq, Auguste de (Ehemann von CdS' Nichte Joséphine)",
+                                "value": 1
+                            }, {
+                                "name": "Saint-Mars, général vicomte de (Bruder der Schwägerin der CdS)",
+                                "value": 7
+                            }, {
+                                "name": "Saint-Mars, vicomte de [= général de Saint-Mars?]",
+                                "value": 6
+                            }, {
+                                "name": "Salis, Sophie de, verh. baronne de Triqueti ",
+                                "value": 13
+                            }, {
+                                "name": "Salm-Reifferscheidt-Alfter, Alfred Joseph Klemens Fürst und Altgraf zu",
+                                "value": 1
+                            }, {
+                                "name": "Salm-Reifferscheidt-Dyck, Franz Joseph August Fürst und Altgraf zu (Bruder SRDs)",
+                                "value": 1
+                            }, {
+                                "name": "Salm-Reifferscheidt-Dyck, Joseph Fürst und Altgraf zu (SRD)",
+                                "value": 44
+                            }, {"name": "Salm, Constance de", "value": 1}, {
+                                "name": "Salomon, Adam",
+                                "value": 1
+                            }, {"name": "Sandt, G. [de?]", "value": 5}, {
+                                "name": "Sandt, Joséphine de, geb. Andriel",
+                                "value": 1
+                            }, {
+                                "name": "Sandt, Madame de",
+                                "value": 1
+                            }, {
+                                "name": "Sanson de Pongerville, Jean-Baptiste",
+                                "value": 84
+                            }, {
+                                "name": "Sanson de Pongerville, Jean-Baptiste; Sanson de Pongerville, Madame",
+                                "value": 1
+                            }, {"name": "Sauvo, François", "value": 15}, {
+                                "name": "Say, Jean-Baptiste",
+                                "value": 3
+                            }, {
+                                "name": "Schepeler, Andreas Daniel Berthold von",
+                                "value": 17
+                            }, {
+                                "name": "Sédillot, Jean-Jacques Emmanuel",
+                                "value": 1
+                            }, {
+                                "name": "Servan de Sugny, Pierre-Marie-François",
+                                "value": 1
+                            }, {"name": "Simon(s), Monsieur", "value": 1}, {
+                                "name": "Sobry, Adèle",
+                                "value": 1
+                            }, {"name": "Sobry, Adrienne", "value": 7}, {
+                                "name": "Sobry, Jean-François",
+                                "value": 1
+                            }, {
+                                "name": "Soult, Maréchal Nicolas Jean-de-Dieu",
+                                "value": 1
+                            }, {
+                                "name": "Stassart, Goswin Joseph Augustin, baron de",
+                                "value": 8
+                            }, {
+                                "name": "Suard, Jean Baptiste Antoine",
+                                "value": 1
+                            }, {
+                                "name": "Surlet de Chokier, Érasme-Louis, baron",
+                                "value": 1
+                            }, {"name": "Süss, J. (Pfarrer)", "value": 1}, {
+                                "name": "Théis, Adolphe de",
+                                "value": 1
+                            }, {
+                                "name": "Théis, Alexandre Étienne Guillaume, baron de (Bruder der CdS)",
+                                "value": 104
+                            }, {
+                                "name": "Théis, Anne Marguerite de, geb. de Saint-Mars (Frau des Bruders der CdS)",
+                                "value": 1
+                            }, {
+                                "name": "Théis, Charles Constant de",
+                                "value": 6
+                            }, {
+                                "name": "Théis, Joséphine de, verh. Saint-Cricq, gen. Finette",
+                                "value": 4
+                            }, {
+                                "name": "Thiessé, Léon",
+                                "value": 1
+                            }, {
+                                "name": "Thurn und Taxis, Therese (Mathilde Amalia), geb. Herzogin zu Mecklenburg(-Strelitz), Fürstin von",
+                                "value": 11
+                            }, {"name": "Thurot, Jean-François", "value": 13}, {
+                                "name": "Thurot, Madame",
+                                "value": 4
+                            }, {"name": "Tissot, Pierre-François", "value": 9}, {
+                                "name": "Trosdorff, Herr",
+                                "value": 1
+                            }, {"name": "Ursin, Pierre-François-Marie", "value": 3}, {
+                                "name": "Valant, Joseph-Honoré",
+                                "value": 4
+                            }, {
+                                "name": "Valleran(d), Hubert",
+                                "value": 2
+                            }, {
+                                "name": "Vanhove, Charlotte, gen. Caroline, verh. Talma, dann verh. comtesse de Châlot",
+                                "value": 16
+                            }, {"name": "Vaulgrenand, comte de", "value": 1}, {
+                                "name": "Vaulgrenand, comtesse de",
+                                "value": 5
+                            }, {"name": "Vernéjoul, Monsieur de", "value": 1}, {
+                                "name": "Vial, Monsieur",
+                                "value": 1
+                            }, {
+                                "name": "Vien, Rose Céleste, geb. Bache",
+                                "value": 11
+                            }, {
+                                "name": "Viennet, Jean-Pons-Guillaume",
+                                "value": 11
+                            }, {
+                                "name": "Villenave, Mathieu-Guillaume-Thérèse",
+                                "value": 99
+                            }, {"name": "Villenave, Théodore", "value": 8}, {
+                                "name": "Waldor, Mélanie, geb. Villenave",
+                                "value": 32
+                            }, {
+                                "name": "Wergifosse / Vergifosse, Monsieur (de?)",
+                                "value": 1
+                            }, {
+                                "name": "Wied-Neuwied, Maximilian Alexander Philipp, Prinz zu",
+                                "value": 1
+                            }, {"name": "Wilken, Friedrich", "value": 1}, {"name": "Zur Hosen, Herr", "value": 1}];
+
+                            networkSeries.dataFields.linkWith = "linkWith";
+                            networkSeries.dataFields.name = "name";
+                            networkSeries.dataFields.id = "name";
+                            networkSeries.dataFields.value = "value";
+                            networkSeries.links.template.distance = 1;
+                            networkSeries.nodes.template.tooltipText = "{value}";
+                            networkSeries.nodes.template.fillOpacity = 1;
+                            networkSeries.nodes.template.outerCircle.scale = 1;
+
+                            networkSeries.nodes.template.label.text = "{name}"
+                            networkSeries.fontSize = 13;
+                            networkSeries.nodes.template.label.hideOversized = false;
+                            networkSeries.nodes.template.label.truncate = true;
+                            networkSeries.minRadius = am4core.percent(1);
+                            networkSeries.manyBodyStrength = -2;
+                            networkSeries.links.template.strokeOpacity = 0;
+                            networkSeries.maxLevels = 1;
+
+                            networkSeries.nodes.template.togglable = false;
+                            chart.zoomable = true;
+                            networkSeries.nodes.template.label.fill = am4core.color("#30303d");
+                            networkSeries.nodes.template.events.on("hit", function (event) {
+                                if (event.target.isActive) {
+                                    chart.zoomToDataItem(event.target.dataItem, 3, true)
+                                } else {
+                                    chart.zoomOut();
+                                }
+                            });
+
+
+                        }); // end am4core.ready()
+                    </script>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- YEARS AND LETTERS SENT -->
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Letters Sent per Year</h5>
+                    <p class="card-text">Barchart of the amount of letters Constance de Salm sent to other people per year (from 1793–1845). Using the mouse-wheel inside of this chart will
+                    zoom in or out on/of the bars to better focus on conrete intervals. You can also download the visualisation (on the top-right, the three dots)!</p>
+                    <div id="chartdiv-years"></div>
+                    <!-- Resources -->
+                    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+                    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+                    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+                    <script src="https://cdn.amcharts.com/lib/5/plugins/exporting.js"></script>
+                    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+                    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+                    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+                    <script src="https://cdn.amcharts.com/lib/5/plugins/exporting.js"></script>
+
+                    <!-- Chart code -->
+                    <script>
+                        am5.ready(function() {
+
+// Create root element
+// https://www.amcharts.com/docs/v5/getting-started/#Root_element
+                            var root = am5.Root.new("chartdiv-years");
+
+
+// Set themes
+// https://www.amcharts.com/docs/v5/concepts/themes/
+                            root.setThemes([
+                                am5themes_Animated.new(root)
+                            ]);
+
+
+// Create chart
+// https://www.amcharts.com/docs/v5/charts/xy-chart/
+                            var chart = root.container.children.push(am5xy.XYChart.new(root, {
+                                panX: false,
+                                panY: false,
+                                wheelX: "panX",
+                                wheelY: "zoomX",
+                                layout: root.verticalLayout
+                            }));
+
+
+                            var data = [{"year": "1793", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 1}, {"year": "1794", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 2}, {"year": "1795", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 1}, {"year": "1797", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 1}, {"year": "1798", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 3}, {"year": "1800", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 2}, {"year": "1801", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 2}, {"year": "1802", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 4}, {"year": "1803", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 1}, {"year": "1806", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 2}, {"year": "1808", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 2}, {"year": "1809", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 5}, {"year": "1810", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 5}, {"year": "1811", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 8}, {"year": "1812", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 5}, {"year": "1813", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 3}, {"year": "1814", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 14}, {"year": "1815", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 34}, {"year": "1816", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 27}, {"year": "1817", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 36}, {"year": "1818", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 13}, {"year": "1819", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 14}, {"year": "1820", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 25}, {"year": "1821", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 9}, {"year": "1822", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 9}, {"year": "1823", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 16}, {"year": "1824", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 30}, {"year": "1825", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 62}, {"year": "1826", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 37}, {"year": "1827", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 47}, {"year": "1828", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 86}, {"year": "1829", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 125}, {"year": "1830", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 67}, {"year": "1831", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 85}, {"year": "1832", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 57}, {"year": "1833", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 91}, {"year": "1834", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 73}, {"year": "1835", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 104}, {"year": "1836", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 121}, {"year": "1837", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 97}, {"year": "1838", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 69}, {"year": "1839", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 106}, {"year": "1840", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 86}, {"year": "1841", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 85}, {"year": "1842", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 45}, {"year": "1843", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 3}, {"year": "1844", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 58}, {"year": "1845", columnSettings: {
+                                    fill: chart.get("colors").next()
+                                }, "value": 1}]
+
+
+// Create axes
+// https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+                            var xRenderer = am5xy.AxisRendererX.new(root, {
+                                cellStartLocation: 0.1,
+                                cellEndLocation: 0.9,
+                                minGridDistance: 50
+                            });
+
+                            var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
+                                categoryField: "year",
+                                renderer: xRenderer,
+                                tooltip: am5.Tooltip.new(root, {})
+                            }));
+
+                            xRenderer.grid.template.setAll({
+                                location: 1
+                            });
+
+                            xRenderer.labels.template.setAll({
+                                multiLocation: 0.5
+                            })
+
+                            xAxis.data.setAll(data);
+
+                            var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+                                renderer: am5xy.AxisRendererY.new(root, {
+                                    strokeOpacity: 0.1
+                                })
+                            }));
+
+
+// Add series
+// https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+                            var series = chart.series.push(am5xy.ColumnSeries.new(root, {
+                                xAxis: xAxis,
+                                yAxis: yAxis,
+                                valueYField: "value",
+                                categoryXField: "year"
+                            }));
+
+                            series.columns.template.setAll({
+                                tooltipText: "{categoryX}: {valueY}",
+                                width: am5.percent(90),
+                                tooltipY: 0,
+                                strokeOpacity: 0,
+                                templateField: "columnSettings"
+                            });
+
+                            series.data.setAll(data);
+
+
+                            // Add export menu
+                            var exporting = am5plugins_exporting.Exporting.new(root, {
+                                menu: am5plugins_exporting.ExportingMenu.new(root, {})
+                            });
+
+
+                            series.appear();
+                            chart.appear(1000, 100);
+
+                        }); // end am5.ready()
+                    </script>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- CONSTANCE DE SALM: KNOWLEDGE GRAPH -->
+        <div class="card">
+            <h4 class="dashboard-title">Exploring the Correspondence Through the Knowledge Graph</h4>
+            <h5 class="dashboard-subtitle">Constance de Salm in Nodes and Edges</h5>
+            <div class="card-body">
+                <h5 class="card-title">101 of Using the Graph Interface</h5>
+
+                <div>
+                    <h6>1. Loading the Graph</h6>
+                    <p>The knowledge graph will load automatically once you visit this website. Depending on how fast your internet is, or generally on how fast your PC can process data,
+                    the graph will take a few seconds less or more. You can check if the graph is still loading based on the indicator <span class="badge rounded-pill bg-secondary">loading graph</span> in the tab below the search bar.
+                        If you want to reload the graph, you can simply click on the button  <span class="badge rounded-pill bg-secondary">clear (reload graph)</span>.
+                        <br> <small>
+                            P.S. If the graph is dancing around, this means all the visual information is still being adjusted to the screen. You can already interact with the graph, however,
+                            the little dancey dance can be a bit distracting...
+                        </small>
+                    </p>
+                </div>
+
+                <div class="pt-2">
+                    <h6>2. Interacting With the Graph</h6>
+                    <p>There are a few ways you can interact with this graph. Zooming in and out is possible via the mouse-wheel (also used for scrolling, so using the mouse-wheel inside the graph-window
+                    will not scroll on the page but instead zoom in/zoom out). Clicking once on a node or relationship will focus its metadata information on the upper-left of the graph window. Right-clicking on it will open
+                    the URL in a new tab (for example, this way, you can get to the facsimile of a letter). When you are in the search-view of the graph, double-clicking the nodes will open its context information (other nodes
+                    it is connected to). In order to get back to the initial, full-view of the graph, you have to reload the graph.</p>
+                </div>
+
+                <div class="pt-2">
+                    <h>3. A Special Way of Interacting With the Graph: Search!</h>
+                    <p>In order to search for nodes in the graph, you can type a <span style="color: #f48c24">single-word search term</span> into the search bar and then proceed to click on <span class="badge rounded-pill bg-secondary">search in graph</span>.
+                        If the search term was found in one or more of the nodes, a new, smaller graph is displayed. Nodes that can be queried this way are addressees, keywords, automatic keywords, dates, sentiments or places of exposition.
+                        In the search-view, you can double-click on nodes to show their context. Getting back to the initial, full-view is possible via reloading the graph.
+                        <br>Try searching for terms that interest you, e.g.  <span style="color: #f48c24"><em>health</em></span>  or  <span style="color: #f48c24"><em>Paris</em></span>!</p>
+                </div>
+                <h6>More elaborated background information and an overview of the icons and their meaning can be found under <strong><a id="link-info" href="pages-faq.html">F.A.Q.</a></strong>!</h6>
+            </div>
+
+            <div id="search-graph" style="padding: 10px;">
+                <input id="userInput" type="text" class="form-control-lg flex-column" style="width:20%; border-color: #f8bd70;"
+                       placeholder="search for a node">
+                <button type="button" class="btn btn-primary flex-column" onclick="returnText()" style="width:15%"><i
+                        class="bi bi-search me-1"></i>
+                    search in graph
+                </button>
+                <button id="clear" type="button" class="btn btn-primary flex-column"
+                       onclick="clearInput()"><i class="bi bi-arrow-counterclockwise me-1"></i>
+                    clear (reload graph)
+                </button>
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <button id="loading_indicator" class="btn btn-primary w-30" type="button" disabled>
+                    <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+                    loading graph...
+                </button>
+            </div>
+            <div id="neo4jd3" style="height:700px"/>
+
+
+            <!-- Scripts -->
+            <script src="https://eisman.github.io/neo4jd3/js/d3.min.js"></script>
+            <script src="/assets/js/neo4jd3.js"></script>
+            <script src="https://unpkg.com/d3@4"></script>
+            <script src="https://unpkg.com/d3-component@3.0.0"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+
+            <script type="text/javascript">
+
+                function init(jsonFile) {
+                    var neo4jd3Graph = new Neo4jd3('#neo4jd3', {
+                        highlight: [
+                            {
+                                class: 'wv__Sender',
+                                property: 'uri',
+                                value: 'https://d-nb.info/gnd/116765968'
+                            }
+                        ],
+                        icons: {
+                            'wv__Addressee': 'male',
+                            'wv__Letter': 'envelope-o',
+                            'wv__Sentiment': 'thoughts',
+                            'wv__Keyword': 'tag',
+                            'wv__Automatic_Keyword': 'robot',
+                            'wv__First_Line': 'quote-left',
+                            'gn__Feature': 'map-pin',
+
+                        },
+                        images: {
+                            'wv__Addressee': 'img/twemoji/pen-nib-solid.svg',
+                            'wv__Sender': 'img/cds_icon_circle.png'
+                        },
+                        minCollision: 60,
+                        neo4jDataUrl: jsonFile,
+                        nodeRadius: 25,
+                        onNodeRightClick: function (node) {
+                            if (node.labels.includes("wv__Addressee") || node.labels.includes("wv__Keyword") || node.labels.includes("wv__First_Line")) {
+                                if (node.properties.uri.includes("https://wissen-vernetzen.github.io/ontology.html#")) {
+                                    // Google
+                                    //console.log(node.properties.rdfs__label, node.labels);
+                                    window.open("https://wissen-vernetzen.github.io/ontology.html#");
+                                } else {
+                                    window.open(node.properties.uri);
+                                }
+
+                            } else {
+                                window.open(node.properties.uri);
+                            }
+                        },
+                        zoomFit: true
+                    });
+                }
+            </script>
+            <script id="">
+                console.log('Loading graph...');
+
+                function loadGraphInitial(jsonFile) {
+                    document.onreadystatechange = function () {
+                        init(jsonFile);
+                        if (document.readyState !== "complete") {
+                            document.getElementById("neo4jd3").style.visibility = "hidden";
+                            document.getElementById("loading_indicator").style.visibility = "visible";
+                        } else {
+                            setTimeout(() => {
+                                document.getElementById("loading_indicator").style.display = "none";
+                                document.getElementById("neo4jd3").style.visibility = "visible";
+                            }, 9000)
+                        }
+                    };
+                };
+            </script>
+            <script>
+                loadGraphInitial('json/cds-wv_fv-special.json');
+            </script>
+            <script>
+                function initModdedGraph(jsonObject, entireJson, jsonFormat) {
+                    var neo4jd3Modded = new Neo4jd3('#neo4jd3', {
+                        highlight: [
+                            {
+                                class: 'wv__Sender',
+                                property: 'uri',
+                                value: 'https://d-nb.info/gnd/116765968'
+                            }
+                        ],
+                        icons: {
+                            'wv__Addressee': 'male',
+                            'wv__Letter': 'envelope-o',
+                            'wv__Sentiment': 'thoughts',
+                            'wv__Keyword': 'tag',
+                            'wv__Automatic_Keyword': 'robot',
+                            'wv__First_Line': 'quote-left',
+                            'gn__Feature': 'map-pin',
+
+                        },
+                        images: {
+                            'wv__Addressee': 'img/twemoji/pen-nib-solid.svg',
+                            'wv__Sender': 'img/cds_icon_circle.png'
+                        },
+                        minCollision: 60,
+                        neo4jData: jsonObject,
+                        nodeRadius: 25,
+                        onNodeRightClick: function (node) {
+                            if (node.labels.includes("wv__Addressee") || node.labels.includes("wv__Keyword")) {
+                                if (node.properties.uri.includes("https://constance-de-salm.de/ontology#")) {
+                                    // Google
+                                    console.log(node.properties.rdfs__label, node.labels);
+                                    window.open(node.properties.url, '_blank');
+                                } else {
+                                    window.open(node.properties.uri);
+                                }
+
+                            } else {
+                                window.open(node.properties.uri);
+                            }
+                        },
+                        onNodeDoubleClick: function (node) {
+                            jsonFormat = {
+                                "results": [
+                                    {
+                                        "columns": [
+                                            "path"
+                                        ],
+                                        "data": [],
+                                    }
+                                ],
+                                "errors": []
+                            }
+                            neo4jd3Modded.resetWithNeo4jData(jsonFormat);
+                            for (let x of entireJson['results'][0]['data']) {
+                                if (x.graph.nodes[0].id == node.id || x.graph.nodes[1].id == node.id) {
+                                    //  (!(x.graph.nodes[0].id in jsonObject['results'][0]['data'] && )) )
+                                    jsonFormat['results'][0]['data'].push(x);
+                                }
+                            }
+                            console.log(jsonObject)
+                            // console.log("Mini JSON", jsonObject);
+                            // console.log("Entire JSON", entireJson);
+                            neo4jd3Modded.updateWithNeo4jData(jsonFormat);
+                        },
+                        zoomFit: true
+                    });
+                }
+            </script>
+            <script>
+                const search = document.getElementById('search');
+                const matchList = document.getElementById('matchList');
+                let jsondata;
+
+                // Get further info
+                const getJsonData = async () => {
+                    const res = await fetch('json/cds-wv_fv-special.json');
+                    jsondata = await res.json();
+                };
+
+                // EMPTY JSON FORMAT FOR OUTPUT
+                let rawJson = {
+                    "results": [
+                        {
+                            "columns": [
+                                "path"
+                            ],
+                            "data": [],
+                        }
+                    ],
+                    "errors": []
+                }
+
+                let data = {
+                    "results": [
+                        {
+                            "columns": [
+                                "path"
+                            ],
+                            "data": null
+                        }
+                    ],
+                    "errors": []
+                }
+                //console.log(data);
+
+
+                const searchInput = async searchText => {
+                    //console.log(jsondata['results'][0]['data']);
+                    // GET MATCHES TO CURRENT INPUT
+                    let matches = jsondata['results'][0]['data'].filter(datapoint => {
+                        const regex = new RegExp(`^${searchText}`, 'gi');
+                        //console.log(datapoint.graph.nodes[1]['properties']['rdfs__label'].some(value => regex.test(value)));
+                        // Clear when input or matches are empty
+                        if (
+                            datapoint.graph.nodes[0]['properties']['wv__has_year'] != undefined &&
+                            datapoint.graph.nodes[0]['properties']['wv__has_year'] == searchText ||
+                            datapoint.graph.nodes[1]['properties']['wv__has_year'] != undefined &&
+                            datapoint.graph.nodes[1]['properties']['wv__has_year'] == searchText ||
+                            datapoint.graph.nodes[0]['properties']['wv__has_decade'] != undefined &&
+                            datapoint.graph.nodes[0]['properties']['wv__has_decade'] == searchText ||
+                            datapoint.graph.nodes[1]['properties']['wv__has_decade'] != undefined &&
+                            datapoint.graph.nodes[1]['properties']['wv__has_decade'] == searchText ||
+                            datapoint.graph.nodes[0]['properties']['rdfs__label'] != undefined &&
+                            datapoint.graph.nodes[0]['properties']['rdfs__label'].some(value => regex.test(value)) ||
+                            datapoint.graph.nodes[1]['properties']['rdfs__label'] != undefined &&
+                            datapoint.graph.nodes[1]['properties']['rdfs__label'].some(value => regex.test(value)) ||
+                            datapoint.graph.nodes[0]['properties']['dbo__alias'] != undefined &&
+                            datapoint.graph.nodes[0]['properties']['dbo__alias'].some(value => regex.test(value)) ||
+                            datapoint.graph.nodes[1]['properties']['dbo__alias'] != undefined &&
+                            datapoint.graph.nodes[1]['properties']['dbo__alias'].some(value => regex.test(value)) ||
+                            datapoint.graph.nodes[0]['properties']['gn__name'] != undefined &&
+                            datapoint.graph.nodes[0]['properties']['gn__name'].some(value => regex.test(value)) ||
+                            datapoint.graph.nodes[1]['properties']['gn__name'] != undefined &&
+                            datapoint.graph.nodes[1]['properties']['gn__name'].some(value => regex.test(value)) ||
+                            datapoint.graph.nodes[0]['properties']['wv__has_template_status'] != undefined &&
+                            datapoint.graph.nodes[0]['properties']['wv__has_template_status'] == searchText ||
+                            datapoint.graph.nodes[1]['properties']['wv__has_template_status'] != undefined &&
+                            datapoint.graph.nodes[1]['properties']['wv__has_template_status'] == searchText ||
+                            datapoint.graph.nodes[0]['properties']['wv__has_sentiment'] != undefined &&
+                            datapoint.graph.nodes[0]['properties']['wv__has_sentiment'] == searchText ||
+                            datapoint.graph.nodes[1]['properties']['wv__has_sentiment'] != undefined &&
+                            datapoint.graph.nodes[1]['properties']['wv__has_sentiment'] == searchText ||
+                            datapoint.graph.nodes[0]['properties']['rdfs__comment'] != undefined &&
+                            datapoint.graph.nodes[0]['properties']['rdfs__comment'] == searchText ||
+                            datapoint.graph.nodes[1]['properties']['rdfs__comment'] != undefined &&
+                            datapoint.graph.nodes[1]['properties']['rdfs__comment'] == searchText ||
+                            datapoint.graph.nodes[0]['properties']['skos__altLabel'] != undefined &&
+                            datapoint.graph.nodes[0]['properties']['skos__altLabel'] == searchText ||
+                            datapoint.graph.nodes[1]['properties']['skos__altLabel'] != undefined &&
+                            datapoint.graph.nodes[1]['properties']['skos__altLabel'] == searchText
+                        ) {
+                            console.log(datapoint.graph.nodes)
+                            return (datapoint)
+                        }
+                    });
+
+                    if (searchText.length == 0) {
+                        // let it visualise the standard graph when cleared
+                        data.results[0].data = null;
+                        //console.log(data);
+                    } else {
+                        data.results[0].data = matches;
+                        //console.log(searchText);
+                        //console.log(matches);
+                        //console.log(data);
+                        initModdedGraph(data, jsondata, rawJson);
+                    }
+                };
+
+                window.addEventListener('DOMContentLoaded', getJsonData);
+
+                function returnText() {
+                    let input = document.getElementById("userInput").value;
+                    searchInput(input);
+                }
+
+
+            </script>
+
+            <script>
+                function clearInput() {
+                    // TWO OPTIONS: RELOAD ENTIRE WEBSITE OR RELOAD ONLY THE GRAPH – DEPENDING ON HOW HUGE THE DATA INPUT IS,
+                    // LOADING THE GRAPH TAKES A WHILE!
+                    location.reload();
+                    // init('json/hi.json');
+                    var getValue = document.getElementById("userInput");
+                    if (getValue.value != "") {
+                        getValue.value = "";
+                    }
+                }
+            </script>
+        </div>
+
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+    <div class="copyright">
+        &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="impressum">
+         <strong><span><a href="impressum.html" class="link-dark">Impressum</a></span></strong>
+    </div>
+    <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+        Designed by <a href="https://bootstrapmade.com/" class="link-dark">BootstrapMade</a>
+    </div>
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/chart.js/chart.umd.js"></script>
+<script src="assets/vendor/echarts/echarts.min.js"></script>
+<script src="assets/vendor/quill/quill.min.js"></script>
+<script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+<script src="assets/vendor/tinymce/tinymce.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
