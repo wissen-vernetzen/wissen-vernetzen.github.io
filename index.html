@@ -144,7 +144,7 @@
 <main id="main" class="main">
 
     <div class="pagetitle">
-        <h1>Dashboard: Connecting Knowledge Is Like Stargazing</h1>
+        <h1>Dashboard</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -159,12 +159,11 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Welcome to the Virtual Salon of Constance de Salm (1767–1845)</h5>
-                <p class="card-text">With this interactive dashboard, you can take the plunge into the world of Constance de Salm, a French female poet and writer of the 18th and 19th century.
-                    The project originated at the Historical German Institute in Paris (Deutsches Historisches Institut Paris, DHIP) in 2010 and is actively being worked on for over ten years.
-                    The <strong><a id="link-info" href="https://constance-de-salm.de">official website</a></strong> includes facsimiles and further important information on the main projects.
+                <p class="card-text">With this interactive dashboard, you can take the plunge into the correspondence of Constance de Salm, a French female poet and writer of the 18th and 19th century.
+                    Basic metadata is taken from the edition project of the Historical German Institute in Paris (Deutsches Historisches Institut Paris, DHIP).
+                    The <strong><a id="link-info" href="https://constance-de-salm.de">official website</a></strong> includes facsimiles of the aprox. 11,000 documents – mostly letters  written from or to Constance de Salm- and further important information on the main projects.
                     <br>
-                    Within my Master's thesis, I continued working with the data about and from the correspondence.
-                    The main goal is to merge all metadata into a linked open data (RDF) model, to use text mining techniques for semi-automatic information retrieval and to
+                    This project focuses on letters written by Constance de Salm. Its main goal is to merge all metadata into a linked open data (RDF) model, to use text mining techniques for semi-automatic information retrieval and to
                     build an interactive knowledge graph that works as a fun gateway to information about the correspondence.
                     On this dashboard, you can get a first impression of certain stats, as well as interact with the latest (reduced) version of the knowledge graph.
                 </p>
@@ -191,7 +190,7 @@
 
     <!-- PLACES OF EXPOSITION -->
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6 d-flex align-items-stretch">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Most Prominent Places of Exposition</h5>
@@ -364,8 +363,8 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Main Addressees</h5>
-                    <p class="card-text">Overview of all addressees Constance de Salm sent letters to. The big circles show those she wrote to the most. Hovering over a bubble will display
-                    the correspondence frequency. You can also zoom in to read the full names.</p>
+                    <p class="card-text">Overview of all addressees Constance de Salm sent letters to. Hovering over a bubble displays
+                    the frequency.</p>
                     <a href="#search-graph" class="btn btn-primary">Find addressees and their letters!</a>
                     <div id="chartdiv-addressees"></div>
                     <!-- Resources -->
@@ -1113,7 +1112,7 @@
                             networkSeries.dataFields.id = "name";
                             networkSeries.dataFields.value = "value";
                             networkSeries.links.template.distance = 1;
-                            networkSeries.nodes.template.tooltipText = "{value}";
+                            networkSeries.nodes.template.tooltipText = "{name}, {value}";
                             networkSeries.nodes.template.fillOpacity = 1;
                             networkSeries.nodes.template.outerCircle.scale = 1;
 
@@ -1125,6 +1124,7 @@
                             networkSeries.manyBodyStrength = -2;
                             networkSeries.links.template.strokeOpacity = 0;
                             networkSeries.maxLevels = 1;
+
 
                             networkSeries.nodes.template.togglable = false;
                             chart.zoomable = true;
@@ -1360,15 +1360,13 @@
         <!-- CONSTANCE DE SALM: KNOWLEDGE GRAPH -->
         <div class="card">
             <h4 class="dashboard-title">Exploring the Correspondence Through the Knowledge Graph</h4>
-            <h5 class="dashboard-subtitle">Constance de Salm in Nodes and Edges</h5>
             <div class="card-body">
                 <h5 class="card-title">101 of Using the Graph Interface</h5>
 
                 <div>
                     <h6>1. Loading the Graph</h6>
                     <p>The knowledge graph will load automatically once you visit this website. Depending on how fast your internet is, or generally on how fast your PC can process data,
-                    the graph will take a few seconds less or more. You can check if the graph is still loading based on the indicator <span class="badge rounded-pill bg-secondary">loading graph</span> in the tab below the search bar.
-                        If you want to reload the graph, you can simply click on the button  <span class="badge rounded-pill bg-secondary">clear (reload graph)</span>.
+                    the graph will take a few seconds less or more. If you want to reload the graph, you can simply click on the button  <span class="badge rounded-pill bg-secondary">clear (reload graph)</span>.
                         <br> <small>
                             P.S. If the graph is dancing around, this means all the visual information is still being adjusted to the screen. You can already interact with the graph, however,
                             the little dancey dance can be a bit distracting...
@@ -1485,7 +1483,7 @@
                             }, 9000)
                         }
                     };
-                };
+                }
             </script>
             <script>
                 loadGraphInitial('json/cds-wv_fv-special.json');
@@ -1551,8 +1549,6 @@
                                 }
                             }
                             console.log(jsonObject)
-                            // console.log("Mini JSON", jsonObject);
-                            // console.log("Entire JSON", entireJson);
                             neo4jd3Modded.updateWithNeo4jData(jsonFormat);
                         },
                         zoomFit: false
@@ -1647,10 +1643,14 @@
                         }
                     });
 
-                    if (searchText.length == 0) {
+
+                    if (searchText.length === 0) {
                         // let it visualise the standard graph when cleared
-                        data.results[0].data = null;
-                        //console.log(data);
+                        initModdedGraph(jsondata, jsondata, rawJson);
+                    } else if (matches.length === 0) {
+                        console.log("Zero matches!");
+                        let myModal = new bootstrap.Modal(document.getElementById('myModal'), {});
+                        myModal.show();
                     } else {
                         data.results[0].data = matches;
                         //console.log(searchText);
@@ -1683,6 +1683,31 @@
                 }
             </script>
         </div>
+
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Oops, that didn't work...</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Sorry, there was no result for your search query. Please try again with a different prompt!
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
 
 
 </main><!-- End #main -->
